@@ -24,6 +24,19 @@ android {
         }
     }
 
+    buildTypes.each {
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file("local.properties").newDataInputStream())
+        def marvelPublicKey = properties.getProperty("marvel_public_key", "")
+        def marvelPrivateKey = properties.getProperty("marvel_private_key", "")
+
+        it.buildConfigField 'String', "MARVEL_PUBLIC_KEY", "marvelPublicKey"
+        it.buildConfigField 'String', "MARVEL_PRIVATE_KEY", "marvelPrivateKey"
+
+        it.resValue 'string', "marvel_public_key", marvelPublicKey
+        it.resValue 'string', "marvel_private_key", marvelPrivateKey
+    }
+
     dataBinding {
         enabled = true
     }
@@ -33,7 +46,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    //Databinding setup
+    // Databinding setup
     kapt "com.android.databinding:compiler:$gradle_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.2.0'
