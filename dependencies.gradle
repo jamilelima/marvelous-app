@@ -1,0 +1,42 @@
+ext.versions = [
+    minSdk              : 22,
+    compileSdk          : 29,
+    versionCode         : 1,
+    versionName         : '1.0.0',
+
+    // Gradle Plugins
+    gradleBuildTool     : '3.5.3',
+    spotlessGradle      : '3.26.1',
+    versionPlugin       : '0.23.0',
+
+    // Kotlin
+    kotlin              : '1.3.61',
+
+    // Support Library
+    materialVersion     : '1.2.0-alpha05',
+    constraintVersion   : '1.1.3',
+
+    // Arch Components
+    activityKtxVersion  : '1.1.0',
+    fragmentKtxVersion  : '1.2.1',
+    activityVersion     : '1.1.0-rc03',
+    archComponentVersion: '2.0.0',
+    lifecycleVersion    : '2.2.0',
+    roomVersion         : '2.2.5',
+
+    // DI
+    koinVersion         : '2.0.1',
+
+    // Network
+    retrofitVersion     : '2.6.0',
+    okhttpVersion       : '4.1.0',
+
+    // Coroutines
+    coroutinesVersion   : '1.3.0',
+
+    // Glide
+    glideVersion        : '4.9.0',
+
+    // debugging
+    timberVersion       : '4.7.1',
+]
