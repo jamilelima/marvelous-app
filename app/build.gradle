@@ -43,14 +43,6 @@ android {
     buildTypes.each {
         Properties properties = new Properties()
         properties.load(project.rootProject.file("local.properties").newDataInputStream())
-        def marvelPublicKey = properties.getProperty("marvel_public_key", "")
-        def marvelPrivateKey = properties.getProperty("marvel_private_key", "")
-
-        it.buildConfigField 'String', "MARVEL_PUBLIC_KEY", "marvelPublicKey"
-        it.buildConfigField 'String', "MARVEL_PRIVATE_KEY", "marvelPrivateKey"
-
-        it.resValue 'string', "marvel_public_key", marvelPublicKey
-        it.resValue 'string', "marvel_private_key", marvelPrivateKey
     }
 
     dataBinding {
@@ -101,4 +93,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 }
