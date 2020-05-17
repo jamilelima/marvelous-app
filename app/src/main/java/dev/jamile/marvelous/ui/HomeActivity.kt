@@ -1,7 +1,8 @@
-package dev.jamile.marvelous
+package dev.jamile.marvelous.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import dev.jamile.marvelous.R
 
 class MainActivity : AppCompatActivity() {
 
